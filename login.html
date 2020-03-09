@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Facebork login</title>
@@ -14,10 +15,10 @@
      color:#00ff00></h2>
 
      <form name="login">
-          Username: <input type="text" name="userid"/>
-          Password: <input id="myInput" type="password" name="pswrd" onkeypress="return passwordKP(event)"/>
-          <input type="checkbox" onclick="myFunction()">Show Password
-          <div id="divMayus" style="visibility:hidden">Caps Lock is on.</div>
+          <div>Username: <input type="text" name="userid"/></div>
+          <div>Password: <input id="myInput" type="password" name="pswrd" onkeypress="return passwordKP(event)"/>
+               <input type="checkbox" onclick="myFunction()">Show Password
+               <div id="divMayus" style="visibility:hidden">Caps Lock is on.</div></div>
           <input type="button" onclick="check(this.form)" value="Login"/>
           <input type="reset" value="Cancel"/>
      </form>
