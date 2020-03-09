@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Facebork login</title>
+</head>
+<body>
+     
+     <h1 style="text-align: center;">Welcome to Facebork! Please login</h1>
+     <hr />
+
+     <h2 style = "font-family:Comic sans-serif;text-align: center"; font-size:20pt;
+     color:#00ff00></h2>
+
+     <form name="login">
+          Username: <input type="text" name="userid"/>
+          Password: <input id="myInput" type="password" name="pswrd" onkeypress="return checkSubmit(event)"/>
+          <input type="checkbox" onclick="myFunction()">Show Password
+          <input type="button" onclick="check(this.form)" value="Login"/>
+          <input type="reset" value="Cancel"/>
+     </form>
+
+     <script language="javascript">
+
+          //Password peek
+          function myFunction(){
+               var x = document.getElementById("myInput");
+               if (x.type === "password") {
+                    x.type = "text";
+               } 
+               else{
+                    x.type="password";
+               }
+          }
+          // Press enter to submit
+          function checkSubmit(e){
+               console.log(e.keyCode, e)
+               if (e && e.keyCode == 13) {
+                    //document.forms[0].submit();
+                    check(document.forms[0])
+               }
+          }
+          // User and password "validation"
+          function check(form)
+          {
+               if(form.userid.value == "matthyme" && form.pswrd.value == "1234")
+               {
+                    alert("You have successfully logged on, Stay safe")
+                    window.open('index.html', '_self')
+               }
+               else
+               {
+                    alert("Wrong Username or Password Please try again")
+               }
+          }
+
+     </script>
+</body>
+</html>

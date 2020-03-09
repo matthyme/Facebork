@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>FaceBork</title>
+</head>
+<body>
+     <h1 style="text-align: center;">Hello! Welcome to Facebork</h1>
+     <hr />
+
+     <form id="form">
+          <input id="content" type="text" />
+          <button type="submit">Post Malone</button>
+     </form>
+
+     <ul id="posts"></ul>
+
+     <script>
+        const postContainer = document.getElementById("posts");
+        const form = document.getElementById("form");
+
+         form.addEventListener("submit", event => {
+          event.preventDefault();
+
+          const contentInput = document.getElementById("content");
+          console.log(contentInput.value)
+ 
+          if (contentInput.value === "") {
+               return;
+          }
+
+          const post = document.createElement("li");
+          post.style=('list-style-type: none;')
+          post.innerText = contentInput.value;
+          postContainer.appendChild(post);
+
+          contentInput.value = '';
+         });    
+     </script>
+
+</body>
+</html>
