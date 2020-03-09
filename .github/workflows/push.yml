@@ -1,0 +1,19 @@
+name: Publish content
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: run publish script
+        run: ./script/publish.sh
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          CONNECTION_PORT: ${{ secrets.CONNECTION_PORT }}
+          CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
+          REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
