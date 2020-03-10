@@ -29,7 +29,6 @@
                       <input name= "userid" class="form-control" type="text">
                     </div>
                </div>
-               <!-- <div style="color:white">Username: <input type="text" name="userid"/></div> -->
            <br>
            <div class="form-group">
                <label style="color:white;">Password</label>
@@ -42,10 +41,6 @@
                </div>
                <div  id="divMayus" style="visibility:hidden; color:white;">Caps Lock is on.</div>
           </div>
-          <!-- <div style="color:white; letter-spacing: .43px;">
-               Password: <input id="myInput" type="password" name="pswrd" onkeypress="return passwordKP(event)"/>
-               <input style="color:white" type="checkbox" onclick="myFunction()">Show Password
-          </div>-->
                <div style="text-align: center;">
                <input class="btn btn-light" type="button" onclick="check(this.form)" value="Login"/>
            <input class="btn btn-light" type="reset" value="Cancel"/>
@@ -82,7 +77,7 @@
           // User and password "validation"
           function check(form)
           {
-               if(form.userid.value == "matthyme" && form.pswrd.value == "1234")
+               if(form.userid.value == "user" && form.pswrd.value == "1111")
                {
                     //alert("You have successfully logged on, Stay safe")
                     window.open('landing.html', '_self')
