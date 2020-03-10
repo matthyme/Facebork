@@ -5,6 +5,11 @@
           body {
                background-image: url(images/background.png);
                }
+               .flex-vertical-center {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
      </style>
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
      <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
@@ -13,18 +18,19 @@
      <title>Facebork login</title>
 </head>
 <body>
-    
-     <h1 style="text-align: center; color: white; font-family: 'Anton', sans-serif ;">Welcome to Facebork! Please login</h1>
-     <hr />
 
-     <div style="text-align: center;">
+     <div style="display:flex; height: 100vh;" class="flex-vertical-center">
+          <h1 style="color: white; font-family: 'Anton', sans-serif ; padding: 1%;">Welcome to Facebork! Please login</h1>
           <form name="login">
            <div style="color:white">Username: <input type="text" name="userid"/></div>
-           <div style="color:white">Password: <input id="myInput" type="password" name="pswrd" onkeypress="return passwordKP(event)"/>
+           <br>
+           <div style="color:white; letter-spacing: .43px;">Password: <input id="myInput" type="password" name="pswrd" onkeypress="return passwordKP(event)"/>
                <!-- <input style="color:white" type="checkbox" onclick="myFunction()">Show Password -->
                <div  id="divMayus" style="visibility:hidden; color:white;">Caps Lock is on.</div></div>
+               <div style="text-align: center;">
                <input type="button" onclick="check(this.form)" value="Login"/>
            <input type="reset" value="Cancel"/>
+               </div>
            </form>
      </div>
      <script language="javascript">
