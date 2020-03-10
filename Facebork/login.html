@@ -22,27 +22,47 @@
      <div style="display:flex; height: 100vh;" class="flex-vertical-center">
           <h1 style="color: white; font-family: 'Anton', sans-serif ; padding: 1%;">Welcome to Facebork! Please login</h1>
           <form name="login">
-           <div style="color:white">Username: <input type="text" name="userid"/></div>
+
+               <div class="form-group">
+                    <label style="color:white;">Username</label>
+                    <div class="input-group" id="Username">
+                      <input name= "userid" class="form-control" type="text">
+                    </div>
+               </div>
+               <!-- <div style="color:white">Username: <input type="text" name="userid"/></div> -->
            <br>
-           <div style="color:white; letter-spacing: .43px;">Password: <input id="myInput" type="password" name="pswrd" onkeypress="return passwordKP(event)"/>
-               <!-- <input style="color:white" type="checkbox" onclick="myFunction()">Show Password -->
-               <div  id="divMayus" style="visibility:hidden; color:white;">Caps Lock is on.</div></div>
+           <div class="form-group">
+               <label style="color:white;">Password</label>
+               <div class="input-group" id="show_hide_password">
+                 <input class="form-control" type="password" name="pswrd" id="myInput" onkeypress="return passwordKP(event)">
+                 <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2"><a style="color:black" onclick="myFunction(event)" href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a></span>
+                     
+                </div>
+               </div>
+               <div  id="divMayus" style="visibility:hidden; color:white;">Caps Lock is on.</div>
+          </div>
+          <!-- <div style="color:white; letter-spacing: .43px;">
+               Password: <input id="myInput" type="password" name="pswrd" onkeypress="return passwordKP(event)"/>
+               <input style="color:white" type="checkbox" onclick="myFunction()">Show Password
+          </div>-->
                <div style="text-align: center;">
-               <input type="button" onclick="check(this.form)" value="Login"/>
-           <input type="reset" value="Cancel"/>
+               <input class="btn btn-light" type="button" onclick="check(this.form)" value="Login"/>
+           <input class="btn btn-light" type="reset" value="Cancel"/>
                </div>
            </form>
      </div>
      <script language="javascript">
 
-          //Password peek
+          //Key Press
           
           function passwordKP(event){
                checkSubmit(event)
                capLock(event)
           }
-
-          function myFunction(){
+          //Password peek
+          function myFunction(event){
+               event.preventDefault();
                var x = document.getElementById("myInput");
                if (x.type === "password") {
                     x.type = "text";
@@ -64,7 +84,7 @@
           {
                if(form.userid.value == "matthyme" && form.pswrd.value == "1234")
                {
-                    alert("You have successfully logged on, Stay safe")
+                    //alert("You have successfully logged on, Stay safe")
                     window.open('landing.html', '_self')
                }
                else
@@ -86,5 +106,9 @@
 
 
      </script>
+     <script src="https://use.fontawesome.com/95a75eec16.js"></script>
+     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
