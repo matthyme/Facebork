@@ -1,50 +1,47 @@
-@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Anton&display=swap");
 
-body{
-    background-image: url(images/background.png);
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
+body {
+  background-image: url(images/background.png);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-#first{
-    display:flex;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+#first {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-#welcome{
-    color: white;
-    font-family: 'Anton', sans-serif;
-   padding: 1%;
+#welcome {
+  color: white;
+  font-family: "Anton", sans-serif;
+  padding: 1%;
 }
 
-#un
-{
-    color: white;
+#un {
+  color: white;
 }
 
-#pw{
-    color: white;
+#pw {
+  color: white;
 }
 
-#basic-addon2{
-    color: black;
+i {
+  color: black;
 }
 
 #iga {
-    color: white;
+  color: white;
 }
 
-#divmayus{
-    visibility: hidden;
-    color: white;
+#divMayus {
+  visibility: hidden;
+  color: white;
 }
 
-#allign{
-    text-align: center;
+#allign {
+  text-align: center;
 }
-
