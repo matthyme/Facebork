@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+
+body{
+    background-image: url(images/background.png);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+#first{
+    display:flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#welcome{
+    color: white;
+    font-family: 'Anton', sans-serif;
+   padding: 1%;
+}
+
+#un
+{
+    color: white;
+}
+
+#pw{
+    color: white;
+}
+
+#basic-addon2{
+    color: black;
+}
+
+#iga {
+    color: white;
+}
+
+#divmayus{
+    visibility: hidden;
+    color: white;
+}
+
+#allign{
+    text-align: center;
+}
+
