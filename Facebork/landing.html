@@ -1,53 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>FaceBork</title>
-     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160159085-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FaceBork</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-160159085-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'UA-160159085-1');
-</script>
-</head>
-<body>
-     <h1 style="text-align: center;">Hello! Welcome to Facebork</h1>
-     <hr />
+      gtag("config", "UA-160159085-1");
+    </script>
+  </head>
+  <body>
+    <h1 style="text-align: center; font-family: 'Anton', sans-serif" ;>
+      Facebork
+    </h1>
+    <hr />
 
-     <form id="form">
-          <input id="content" type="text" />
-          <button type="submit">Post Malone</button>
-          <input type="text" placeholder="enter ssn or cc info here"> 
-     </form>
+    <form class="form-group" id="form" style="padding: 10px" ;>
+      <input class="form-control" id="content" type="text" />
+      <button type="submit" class="btn btn-outline-primary">Post Malone</button>
+    </form>
 
-     <ul id="posts"></ul>
+    <ul id="posts"></ul>
 
-     <script>
-        const postContainer = document.getElementById("posts");
-        const form = document.getElementById("form");
+    <script>
+      const postContainer = document.getElementById("posts");
+      const form = document.getElementById("form");
 
-         form.addEventListener("submit", event => {
-          event.preventDefault();
+      form.addEventListener("submit", event => {
+        event.preventDefault();
 
-          const contentInput = document.getElementById("content");
-          console.log(contentInput.value)
- 
-          if (contentInput.value === "") {
-               return;
-          }
+        const contentInput = document.getElementById("content");
+        console.log(contentInput.value);
 
-          const post = document.createElement("li");
-          post.style=('list-style-type: none;')
-          post.innerText = contentInput.value;
-          postContainer.appendChild(post);
+        if (contentInput.value === "") {
+          return;
+        }
 
-          contentInput.value = '';
-         });    
-     </script>
+        const post = document.createElement("li");
+        post.style = "list-style-type: none;";
+        post.innerText = contentInput.value;
+        postContainer.appendChild(post);
 
-</body>
+        contentInput.value = "";
+      });
+    </script>
+  </body>
 </html>
