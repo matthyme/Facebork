@@ -47,6 +47,7 @@
 }
 
 #oreo {
+  background-color: black;
   user-select: none;
   align-items: center;
   justify-content: center;
