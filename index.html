@@ -1,36 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <meta charset="utf-8">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <meta charset="utf-8" />
+ <link rel="stylesheet" href="Facebork/style.css">
+    <title>Hello</title>
+  </head>
 
-  <title>Hello</title>
- 
+  <body id="oreo">
+    <img style="display: none;" id="bigPic" src="bigPic" />
+    <h1 id="h1">Click for lifelong happiness!</h1>
+    <script>
+      function showPic() {
+        var sourceOfPicture =
+          "https://en.bcdn.biz/Images/2018/6/12/27565ee3-ffc0-4a4d-af63-ce8731b65f26.jpg";
+        var img = document.getElementById("bigPic");
+        img.src = sourceOfPicture.replace("90x90", "225x225");
 
-</head>
-
-<body>
-  <button  class="btn btn-dark" type="button" onclick="showPic()">Click for happiness</button>
-  <img style="display: none;" id="bigPic" src="bigPic">
-  <script>
-    function showPic(){
-      var sourceOfPicture = "https://en.bcdn.biz/Images/2018/6/12/27565ee3-ffc0-4a4d-af63-ce8731b65f26.jpg"
-      var img = document.getElementById("bigPic")
-      img.src = sourceOfPicture.replace('90x90', '225x225')
-
-      if(img.style.display === "block"){
-        img.style.display = "none"
+        if (img.style.display === "block") {
+          img.style.display = "none";
+          document.getElementById("h1")
+          h1.style.display ="flex"
+        } else {
+          img.style.display = "block";
+          h1.style.display = "none";
+        }
       }
-
-      else{
-        img.style.display = 'block'
-      }
-      
-      
-    };
-
-
-  </script>
-</body>
+      var body = document.getElementsByTagName("body")[0];
+      body.addEventListener("click", () => {
+        console.log("hi");
+        showPic();
+      });
+    </script>
+  </body>
 </html>
