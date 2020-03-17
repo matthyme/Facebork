@@ -47,7 +47,7 @@
 }
 
 #oreo {
-  background-image: url(images/wf.gif);
+  background-color: black;
   background-size: cover;
   user-select: none;
   align-items: center;
