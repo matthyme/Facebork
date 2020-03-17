@@ -18,10 +18,32 @@
     <h1 id="h1" style="color: white">Click for happiness!</h1>
     <script>
       function showPic() {
-        var sourceOfPicture =
-          "https://en.bcdn.biz/Images/2018/6/12/27565ee3-ffc0-4a4d-af63-ce8731b65f26.jpg";
+        var sourceOfPicture = new Array ();
+        sourceOfPicture[0]="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-baby-animals-1558535060.jpg?crop=0.752xw:1.00xh;0.125xw,0&resize=640:*"; //2 retrivers
+          sourceOfPicture[1]="https://en.bcdn.biz/Images/2018/6/12/27565ee3-ffc0-4a4d-af63-ce8731b65f26.jpg"; //kitty with paw in mouth
+          sourceOfPicture[2]="https://static.boredpanda.com/blog/wp-content/uuuploads/cute-baby-animals/cute-baby-animals-10.jpg"; // piglet
+          sourceOfPicture[3]="https://static.boredpanda.com/blog/wp-content/uploads/2014/03/cute-fluffy-animals-coverimage.jpg"; // smol white doggo
+          sourceOfPicture[4]="https://i1.wp.com/www.dailycal.org/assets/uploads/2019/10/animals_wikimedia_cc.jpg?ssl=1"; // seal
+          sourceOfPicture[5]="https://i0.wp.com/thefunnybeaver.com/wp-content/uploads/2018/03/animal-fox.jpg?resize=564%2C500&ssl=1"; //fox
+          sourceOfPicture[6]="https://www.thetimes.co.uk/imageserver/image/methode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd2dfda58-9662-11e8-821b-8d0d10bd0d40.jpg?crop=1080%2C607%2C0%2C418&resize=685"; //hedgehog in flowers
+          sourceOfPicture[7]="https://www.andysowards.com/blog/assets/cute-animal-photography-funny-kitty-puppy-memes-11-600x434.jpg"//husky
+          sourceOfPicture[8]="https://www.heraldscotland.com/resources/images/4502082?type=responsive-gallery-fullscreen"//hampseter looking thing
+          sourceOfPicture[9]="https://ichef.bbci.co.uk/images/ic/1200x675/p03t268b.jpg"//sloth
+          sourceOfPicture[10]="https://compote.slate.com/images/73f0857e-2a1a-4fea-b97a-bd4c241c01f5.jpg"//penguins
+          sourceOfPicture[11]="https://frontier.ac.uk/Uploads/images/cute1.jpg"//koala
+          sourceOfPicture[12]="https://alltimelists.com/wp-content/uploads/2018/02/Cute-Animals-that-Are-Not-Pets.jpg"//red panda
+          sourceOfPicture[13]="https://static.boredpanda.com/blog/wp-content/uploads/2015/06/cute-bunnies-tongues-fb__700.jpg"//Bunno with tongue out
+          sourceOfPicture[14]="https://www.rover.com/blog/wp-content/uploads/2019/01/6342530545_45ec8696c8_b-960x540.jpg"//corgo
+          sourceOfPicture[15]="https://4.bp.blogspot.com/-9cPE3C_43MM/TrdQ4d5NvkI/AAAAAAAADXY/35qekAviNW4/s1600/tumblr_lu59vdTFiN1qgbg0co1_500.jpg"//baby panda
+          sourceOfPicture[16]="https://www.rd.com/wp-content/uploads/2018/12/50-Funny-Animal-Pictures-That-You-Need-In-Your-Life-2.jpg"//girraffe
+          sourceOfPicture[17]="https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixlib=rb-1.2.1&w=1000&q=80"//raccon
+          sourceOfPicture[18]="https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492__340.jpg"//ponder kitten
+          sourceOfPicture[19]="https://www.rd.com/wp-content/uploads/2017/10/203_The-Dogist-Puppies-760x506.jpg"//smile doggo
+          sourceOfPicture[20]="https://englishlive.ef.com/blog/wp-content/uploads/sites/2/2016/02/8-motivational-quotes-to-keep-yourself-up.jpg"//motivational
+          //myImages[]="";
+          var rnd = Math.floor(Math.random() * sourceOfPicture.length);
         var img = document.getElementById("bigPic");
-        img.src = sourceOfPicture.replace("90x90", "225x225");
+        img.src = sourceOfPicture[rnd]
 
         if (img.style.display === "block") {
           img.style.display = "none";
