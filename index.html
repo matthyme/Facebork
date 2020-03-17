@@ -1,67 +1,348 @@
 <!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0.9"
+      charset="utf-8"
+    />
+    <link rel="stylesheet" href="Facebork/style.css" />
+    <title>Hello</title>
+  </head>
 
-<head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-  <meta name="viewport" content="width=device-width, initial-scale=0.9" charset="utf-8" />
-  <link rel="stylesheet" href="Facebork/style.css">
-  <title>Hello</title>
-</head>
+  <body id="oreo">
+    <img
+      style="display: none; pointer-events: none;"
+      id="bigPic"
+      src="bigPic"
+    />
+    <h1 id="h1" style="color: white">Wait for happiness!</h1>
+    <script>
+      function showPic() {
+        var sourceOfPicture = [
+          "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-baby-animals-1558535060.jpg?crop=0.752xw:1.00xh;0.125xw,0&resize=640:*", //2 retrivers
+          "https://en.bcdn.biz/Images/2018/6/12/27565ee3-ffc0-4a4d-af63-ce8731b65f26.jpg", //kitty with paw in mouth
+          "https://static.boredpanda.com/blog/wp-content/uuuploads/cute-baby-animals/cute-baby-animals-10.jpg", // piglet
+          "https://static.boredpanda.com/blog/wp-content/uploads/2014/03/cute-fluffy-animals-coverimage.jpg", // smol white doggo
+          "https://i1.wp.com/www.dailycal.org/assets/uploads/2019/10/animals_wikimedia_cc.jpg?ssl=1", // seal
+          "https://i0.wp.com/thefunnybeaver.com/wp-content/uploads/2018/03/animal-fox.jpg?resize=564%2C500&ssl=1", //fox
+          "https://www.thetimes.co.uk/imageserver/image/methode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd2dfda58-9662-11e8-821b-8d0d10bd0d40.jpg?crop=1080%2C607%2C0%2C418&resize=685", //hedgehog in flowers
+          "https://www.andysowards.com/blog/assets/cute-animal-photography-funny-kitty-puppy-memes-11-600x434.jpg", //husky
+          "https://www.heraldscotland.com/resources/images/4502082?type=responsive-gallery-fullscreen", //hampseter looking thing
+          "https://ichef.bbci.co.uk/images/ic/1200x675/p03t268b.jpg", //sloth
+          "https://compote.slate.com/images/73f0857e-2a1a-4fea-b97a-bd4c241c01f5.jpg", //penguins
+          "https://frontier.ac.uk/Uploads/images/cute1.jpg", //koala
+          "https://alltimelists.com/wp-content/uploads/2018/02/Cute-Animals-that-Are-Not-Pets.jpg", //red panda
+          "https://static.boredpanda.com/blog/wp-content/uploads/2015/06/cute-bunnies-tongues-fb__700.jpg", //Bunno with tongue out
+          "https://www.rover.com/blog/wp-content/uploads/2019/01/6342530545_45ec8696c8_b-960x540.jpg", //corgo
+          "https://4.bp.blogspot.com/-9cPE3C_43MM/TrdQ4d5NvkI/AAAAAAAADXY/35qekAviNW4/s1600/tumblr_lu59vdTFiN1qgbg0co1_500.jpg", //baby panda
+          "https://www.rd.com/wp-content/uploads/2018/12/50-Funny-Animal-Pictures-That-You-Need-In-Your-Life-2.jpg", //girraffe
+          "https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixlib=rb-1.2.1&w=1000&q=80", //raccon
+          "https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492__340.jpg", //ponder kitten
+          "https://www.rd.com/wp-content/uploads/2017/10/203_The-Dogist-Puppies-760x506.jpg", //smile doggo
+          "https://englishlive.ef.com/blog/wp-content/uploads/sites/2/2016/02/8-motivational-quotes-to-keep-yourself-up.jpg", //motivational
+          "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/lionel-animals-to-follow-on-instagram-1568319926.jpg?crop=0.922xw:0.738xh;0.0555xw,0.142xh&resize=640:*",
+          "https://lh3.googleusercontent.com/proxy/lIFV2995yiCP-ftMxU94RgP4446USczZHwhGbU-7u7PPCKj_r5uMKXfkoSnKhfGuZHmqPTJrU3fG8zl_3OJscihjdzXKdw6w-GTgTIrtyVbcJiAdoWGwwiOWvqWsbgw4ZGF6",
+          "https://i.imgur.com/kKTWvsY.jpg",
+          "https://cdn.mos.cms.futurecdn.net/DWhRUYKkLuoF57vaJLHVDJ-320-80.jpg",
+          "https://www.pets4homes.co.uk/images/articles/463/large/172e7c25e7d38d42db10e943a7d0e9cd.jpg",
+          "https://media.timeout.com/images/105437173/630/472/image.jpg",
+          "https://shsthepapercut.com/wp-content/uploads/2019/11/sable-cute-e1573868894238.jpg",
+          "https://ichef.bbci.co.uk/images/ic/1200x675/p02k8mcv.jpg",
+          "https://cdn.theatlantic.com/media/old_wire/img/upload/2011/09/30/RTR1N0KN___thumb.jpg",
+          "https://listproducer.com/wp-content/uploads/2014/10/cute.jpg",
+          "https://img.jakpost.net/c/2019/06/25/2019_06_25_75103_1561445774._large.jpg",
+          "https://researchnews.plos.org/files/2018/04/tiger-2341920_1280-720x475.jpg",
+          "https://pbs.twimg.com/profile_images/521554275713830913/TBY5IslL.jpeg",
+          "https://allthatsinteresting.com/wordpress/wp-content/uploads/2011/12/cute-animal-red-panda.jpg",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_LTf2Sq5DkTxJZcKxcHbWKX8h1a9Unvua-J4HTORYg_pOlRKu",
+          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/imh9nnmH8PAw/v1/1000x-1.jpg",
+          "https://www.gannett-cdn.com/presto/2019/03/18/USAT/c17ee40b-f7b9-43c3-bd77-39373bb56124-turk_Potcake_pups_are_beach_bound_in_Provo_in_the_Turks__Caicos_Islands_Credit_Double_Dog_Photography.jpg?width=2560",
+          "https://cdni.rbth.com/rbthmedia/images/all/2017/02/10/tass_19897540.jpg",
+          "https://images.unsplash.com/photo-1583301286816-f4f05e1e8b25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+          "https://media0.giphy.com/media/4Zo41lhzKt6iZ8xff9/giphy.gif",
+          "https://media0.giphy.com/media/s0k30jjI04THq/giphy.gif",
+          "https://media1.giphy.com/media/uELtzAhhqpRKg/giphy.gif",
+          "https://media2.giphy.com/media/Lr2YomhIBU8LK/giphy.gif",
+          "https://media1.giphy.com/media/Xoy7nxdABUOCQ/giphy.gif",
+          "https://media.giphy.com/media/R67DVI47ZetFu/giphy.gif",
+          "https://media3.giphy.com/media/3xz2BCohVTd7h2Kvfi/giphy.gif",
+          "https://media2.giphy.com/media/tsRqkQCs972nTvtojc/giphy.gif",
+          "https://media1.giphy.com/media/14uXQbPS73Y3qU/giphy.gif",
+          "https://media.tenor.com/images/d271d03db8f81d179437d7b4afb4123a/tenor.gif",
+          "https://media.giphy.com/media/gxRtSPjkXgdR6/giphy.gif",
+          "https://media3.giphy.com/media/2sWVUQZaDOfVm/source.gif",
+          "https://media2.giphy.com/media/cmfmzge1LcNknRcVzo/giphy.gif",
+          "https://media2.giphy.com/media/uX4jVwE5tP35C/source.gif",
+          "https://media1.giphy.com/media/bmE2D8hu3K6Uo/giphy.gif",
+          "https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr01/2013/5/31/10/anigif_enhanced-buzz-18261-1370010550-18.gif",
+          "https://media2.giphy.com/media/JglVCaB0axZ4Y/giphy.gif",
+          "https://media1.giphy.com/media/Oo7lRq0Z7xTm8/giphy.gif",
+          "https://media3.giphy.com/media/fxgTGtqZyV2ZqdJBWI/giphy.gif",
+          "https://i.imgur.com/5u72URV.gif?1",
+          "https://media3.giphy.com/media/wyoUdfhunrDZ6/giphy.gif",
+          "https://i.imgur.com/hWIQxWJ.gif",
+          "https://media3.giphy.com/media/GIFbrFpayHUwo/giphy.gif",
+          "https://media.giphy.com/media/WgSBbFfEmGSO3OIRpd/giphy.gif",
+          "https://media3.giphy.com/media/I9XrL9Tc1jpe/giphy.gif",
+          "https://usatftw.files.wordpress.com/2016/11/200-6.gif?w=798&h=502",
+          "https://media.giphy.com/media/ylhecppsCodRm/giphy.gif",
+          "https://media0.giphy.com/media/26gssIytJvy1b1THO/giphy.gif",
+          "https://media3.giphy.com/media/7FgoJcwVRV46Qu6nYB/giphy.gif",
+          "https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr02/2013/5/30/18/anigif_enhanced-buzz-29370-1369953821-18.gif?output-quality=auto&output-format=auto&downsize=360:*",
+          "https://media1.giphy.com/media/jlcuLiJcRpzCNXkRpL/giphy.gif",
+          "https://700010.xyz/files/funotic/animals/cute_animal_gifs_01.gif",
+          "https://usatsneakhype.files.wordpress.com/2016/11/cute-animal-gifs-1.gif?w=1000",
+          "https://media3.giphy.com/media/A61M0714ldi6s/giphy.gif",
+          "https://media3.giphy.com/media/iOGWtvif3DRqiZkq1z/giphy.gif",
+          "https://i.imgur.com/UW4mLnf.gif",
+          "https://media1.giphy.com/media/FArgGzk7KO14k/giphy.gif",
+          "https://media3.giphy.com/media/kZnLNCV3wG2CQ/giphy.gif",
+          "https://66.media.tumblr.com/13c8de380a8038d380108ffb3769ad39/tumblr_pae6ddv2QI1wvpwqfo1_500.gifv",
+          "https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr01/2013/5/30/18/anigif_enhanced-buzz-28461-1369954132-21.gif",
+          "https://static.boredpanda.com/blog/wp-content/uploads/2015/09/unusual-animal-friendships-cute-gifs-3__605.gif",
+          "https://usatsneakhype.files.wordpress.com/2016/11/cute-animal-gifs-2.gif?w=640",
+          "https://i.makeagif.com/media/8-21-2018/bP9v3L.gif",
+          "https://media0.giphy.com/media/GSn7MSs3OyA7e/source.gif",
+          "https://i.chzbgr.com/full/4792578048/hDC6977E2/wine-tends-to-make-me-flirty-too",
+          "https://78.media.tumblr.com/d590c8bda137f7e5c30217e2c3d7e052/tumblr_p0efpefn571wbxqk4o1_540.gif",
+          "https://hips.hearstapps.com/digitalspyuk.cdnds.net/16/21/1464342173-cute-puppy-gif.gif?resize=480:*",
+          "https://media0.giphy.com/media/xT0xeMDhLsyFwrjvBS/giphy.gif",
+          "https://tfln.co/wp-content/uploads/2017/10/0c058b468001dc1c429f97c42866ad23-babyanimal7.gif",
+          "https://i2.wp.com/57.media.tumblr.com/20c13cf01b73b9aac38df02cdc400dce/tumblr_n2ux19ALhr1rlp95mo1_500.gif?resize=500%2C281&ssl=1",
+          "https://i.imgur.com/WdD1aLZ.gif?1",
+          "https://3.bp.blogspot.com/-G0Os-5uORxY/UOwJyMf0w5I/AAAAAAAAdoA/fAqz7Yq0d3c/w1200-h630-p-nu/001-funny-animal-gifs-dog.gif",
+          "https://cdn-images-1.medium.com/max/500/0*PAdg5Gr9rHd9SbB7",
+          "https://lh3.googleusercontent.com/proxy/dTU_4oxDjQ7MSWx8WZqdaVQcYsYcZm3ds0GMTQT0A4l_7noXwtjA15fNgoNkr0-hAIKev7MZgnQh_WMXSVkDmZOV8g7a0SobrGLNeufmO6ClH0S2QAbgYyCX9e5QN8dJV8E4maw",
+          "https://media1.tenor.com/images/a97aa76df84dd75b8a14562a05c97b97/tenor.gif?itemid=11001372",
+          "https://31.media.tumblr.com/2a65ef38ef85adaefc8a584d14e7a533/tumblr_mwse8mak8T1s8mgkyo3_400.gif",
+          "https://cdn130.picsart.com/309595480143201.gif?to=min&r=640",
+          "https://thumbs.gfycat.com/TameAmpleIslandcanary-size_restricted.gif",
+          "https://cdn.lowgif.com/full/97ff9ec06da3ba24-funny-animal-gifs-part-145-10-gifs-cute-animals-pinterest.gif",
+          "https://tfln.co/wp-content/uploads/2017/10/20.-Baby-Animal-Gif.gif",
+          "https://www.collegemagazine.com/wp-content/uploads/2019/05/giphy-1-5.gif",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.CR5MppaA4b_Vhq4sj4DTZQHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.Wi15V-OFMXxApvMOFTVKbwHaGb%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.n43UOpDSs4ZqTT4grahB0AHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.TGYmEyXSdSdopRHuUtbOwAHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.S-ugv6IEejrQw8RXCmOrUAHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.xj29pP_QoVKzXX1KzveSPQHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.ICCjIHxRiCU4L7ch4CP81AHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.qQLDgKIfc30Yh1PJ-Xc_-AHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.OEsrdx6yzsAsPredJnUcTwHaHa%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.S1oWAisKoa5gi0zotDit7gHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.2gYUEF2EHsvJDTuG0bEL5AHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.8WR7cwVFgk7SdA7cQ7t58wHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.gBmfMAM1JpEL_YrJroSr5AHaFS%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.d_mtFuqcu72vd3oFdC6APwHaEo%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.l5JEENnQqfp354iHIVDNHQHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.H30gLa5dQUo_WuuxOUmpPwHaFS%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.i0oC3QRl5UvAD4KrtbfxFAHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.qILmYnHqdbdZrQn2nhcI7gHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.PmbdJOZV-K_UStp6kY-PPwHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.GYmcrXN_C_kYYVyK9Yo9sgHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.2Ukp0XOyn9rIipwvdP80_AHaFL%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.v47o1eU8FXKA4qgpnBp8sgHaFG%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.dj71paG-e962yKRPN_dRlQHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Rn8DgwRO_XYOrYfNx7eMMgHaEo%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.7YUuZ6ta5ojQwhx4c1kUBQHaIx%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP._YDGT8OqVVxv965rzCy6iAHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.qHhMIw8Ao1xxmBI5T4rw4AHaIP%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.pJD45r1nhhLfIdaJBkkobwHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.djt2dKPTCRsk5wdbatmunQHaE3%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.OBZ0XofPBqK3n4b-9C_64QHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EaJwNp-KMvJ42wU72u5aIQHaDt%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.bjhasQbJv2VEekoWcEekfQHaE7%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.mUknEBwVk_yw41I9tDkrSAHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.M-wtDP3Ckgq2qty0l_p4iwHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.7a6GgUfPOb6Pfy86OMtZRgHaE6%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jQMMQLj6E2DB-EalGkwRNAHaE8%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.rzuG6aaYj4EV_FB9PEm3RgHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.ZIVO8fG7WrMBdOJlr7u_3gAAAA%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.Kugmdhupyso5rkahHXQ2QgHaE7%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.MbkgAVOLragYanlZ2tqvlgHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.8Hagq887jhjG2s6ev1UnlAHaEu%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.8xrKQaymZiIJWggazCslIQHaOG%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.68tSUza0GPNktGcI6yqwpQHaJ4%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.iRjeVJfvve4N0MfUky12HgHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.XQ4M5ZKyZ2iqw2iEuATleQHaFM%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.pUJV4IZML704V1uWZyHduQHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.O9jog7SifM2xqpBvf6RBqAHaLL%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.8wjCv0p0T9hcM4H_wWEq9gHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.6vDz3TvCyYMtByOMcrjVSQHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.FmuvdyCSY3COVRd9lANPrAHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.jv1wh8WjzzntQso4sM-IdAHaFM%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.am9hoHLNyoESIruFofa-4QHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.hChe6nvzp3NC2Cu2nst_pAHaE7%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.P7PV6VvaQkN1kAG66-mvkQHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.f3haZlGhLRt8su1lrB1yEgAAAA%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.GFlbIUA_DVOrH4czQnFwjAHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Hwm5Sb1XiaEg6Wp3wty6qgHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EEgHqGuI5oPH01pR6GTEGAHaFD%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.fxpgr2AARZnDEKEQ4XSS2wHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.NpZY5XxM2egnygVu9V-LVgHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.95iZf0_IGe3fcMnwgoJdzgHaEc%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.Ou3voy59rirKakufWftGvwEsDh%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Gnqb3QU5uSqTdH_JljQVTwHaE7%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.44e3KCiuW1nu4lA-0MgP4AHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.Cg2MB6Nf78Okd9WRxvPr7AHaLJ%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.WyTYmkIEs6xbC5uswyhXuAHaEs%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.ZQO1sHM7Qto9Qtd3gNSv0wHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.DndeoZ9FaRpkP-sGOLVn7wHaLI%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.GVxfV_BudA3OBwrVBqcNQwHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.a1N7Uv-tSwyi2StJ8Ry5xwAAAA%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.FihlypLPoz40YTDgYJ3_9QHaJ4%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.JaEzYXiBTpOifpKvdkCTrgHaEn%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.aWuAsU_rUnW0f9C-EDL91wHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.PCGbunBkqHRxuU5Npo0HHwHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.sMe5hSJlItyZs9iLwyQm1wHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.NVdVhHr2RJG6OOK6u76MpQHaFU%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.dzfIRVr3b6XzOq3_vzPs3gHaF2%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.JstoCcqrAkJ9JRsWqaVYpwHaHa%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.OESCkiA7Hzmcw83Xmv1bDAHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.oOhrL97CF0_M3XEQfgXH9QHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.68eNo5CispI-SAxz5w5LmwHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.o2lIwuZ54JYkGVBx8PRICAHaF7%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.yleqq7RNNqAJHQaMTj3iWgHaIr%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.wI36xPcXZ_pTHDRu5I9XtAHaE7%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Ws06lgQqmd7AOnKrwm9WSQHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.8oIn7586GPNGeR3oN-tgYwHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.YixrzPW0Uccoe0XtkCV_PwHaJ4%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.mBY7nZGkw727IkWfP1YGQAHaF7%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.xqHRQxDslVACwK7fD0eb-AHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.YS3uPzrhIpQkig0f1RYGZQHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.KMIYRDZbxusk4mtTbS8opAHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.zRSyot36S-g3KMdgdFNX9QHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.Go6Sj4RpTbiEPnfVz0NjkQHaGe%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.wpjjMs1mIQaROX_w7X1n0gAAAA%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.nHq38HPKP4o3RchzhOGjyAHaF7%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.fCdv1LDsSAp4JDOXZqPhNwHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.XGaQmJ6lDGCVNcBpmnAKoAHaLA%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.rsRazgqXl3JvYx7x83ylBQHaHa%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.UnXGI8zIFpfhH71Oed51dgHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.JLtxvvbwXcLH2RwXrlgU5AHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.rXE1tB1ZGrNq-U6kOtyzlgHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.9lM-PC0h8QQL5vvhByJ5swHaIF%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.8wBMJjJFm9aVGZyytrUXVwAAAA%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.5wnH0dUWUpmwq3Jlt8ZI6AHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.6Jy2is1sNoGL8ZXUJXT0IwHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.a4h8ug3UerG1nTAvPtyCrwHaFt%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.Rmmuqmeq83TPeTcA61WLMQHaHa%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.ruVPpdzNjeK5AqKYSM3yUgHaHa%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.t88IjWRQZRoP1cN6TzGjfgHaHa%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.hzo45MoyGA-YbdlOlwuTyAHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.7AD7lHQCMzvKqCJtfvOW7wHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.UQYTEhMQfQDsJYoRm37rLAHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.X3prjsQXMP6-bUowJIBW7gHaE7%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.s-Ehl-jbG3htPcNvQmIaXwHaEi%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.-itJultSOgB_xCMeXZ92tAHaF_%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.WhYbzdOQFVja1UFjAI22FAHaFa%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.eQmoVSpPPpp4F1SYz_Ug6wHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.9ewSuPKgZsuR-XVLwV58eAHaNJ%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.Bk3f6zYFeIbH6oLtuymxDwHaGQ%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.5CLOTvmXQSRYMVe5W7ZtugHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.wHs2HUyv-wFK1LIvUMO77wHaFl%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.jl2pdoOzovYHZIkUW-2JLgHaHl%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.fk17UDZflsBmQn48VbDRYAHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.1KAEiVK0_qPy8hyKhmaleAHaE8%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.lGBnWhhGnlJr63MyB4da_wHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.ELuBNgX6IrzayJsMCAlXjAHaHU%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP._OHZteR22FJa2al_5hEfjAHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.O14GfutzRwApTTI72wOKqAHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Up1kOz2qcyRYPwEq5hQ5JgHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.iGJ-z4nBsurdBX8G438tNQHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.qeOE6HyLo_9aR6z-EuXO1gHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.jFh9-WRqLd4J2dJmVhAo2QHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.IaEYSXSAIp00wg3EBRvslQHaE7%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.u1sVIzdGqFAms4E2TWkbdgHaEx%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.NlqRgUi6eUjQKZw1eeBl3wHaFk%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.owGii_qPJGj_7IlXkd2SbwHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.4ifoAJafxjru2D27VS3-owHaF3%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.zm3Gjbky4BucIQXJLwMj5gHaEo%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.dX6Vwq0VX7XULvLcrkaSZQHaEo%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.lGe2Wngh66s1AccqZ6Re4wHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.llR-c-B-LP5gu6myeeaxugHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.3--UpZKzznCPpf9JnOzoJQHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.TmdOJBHEeCFDrMcNSv2aSAHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.jSs_SYv_jI4inPhRtLtKygEsCo%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.4Cu6E9jrW4k3OW0vcWVtdwAAAA%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.QTnu94KDftqiPcKIc1W3IgHaKw%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.XR8-T4xMoSRJ2N_TzfVcagHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.FN_ZypORW2ahtdwWKorFZQHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.p7Qo0JIQhRNrLh1AIV7lUAHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.FFPa0IjwJJVWLhL6w2WRnwHaE7%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.X-pEBQoqUmsWbCL_TS6f4wHaIA%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.uP4LHiYsYDMXbyhG4YkarAHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.29Z3M3rVH_Ojn8rtj0_uIwHaKP%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Eyq2ijcki7rJszWOFsaNYgHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.ESLmsw0N0OfAP1dv1hB3KQHaEo%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.6_itI-hHKG_9jZ1tsgkVQAHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.2QZW2ItNGbPFIBpf5msGLgHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.mcwh-cJpxSaquuF-9TNHjgHaLH%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.UagBo8kL2So_38jH6uoMHwHaJA%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.T8OSHwq6VfFBLjpLHojPOAHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.O9mN5flThgGHi11E0T_lvgHaHn%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.4j_rkIDnqV8hLqmeNEyqYAHaF9%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.s3KDlS3l0ekUPVVTqPO96gHaE8%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.eph4TjS3ySTh4wqYO8cs-QHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.Cj4Ygp6Uu-UtpseFNYsyUQHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.fyvf6S5GH1cRAgFNcHvk-QHaJW%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.GF7LF-tht_BlSFPxpDMBrwHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.U7WQlnHc5HP8x9WJCENJJAHaEo%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.U9lEIb51wZ2jEdJCiQ4NkgHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.kejqeI93UOxdftb40bNZ2AHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.2dKxOyZ-mgjz2-0Nf9HPmAHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.u7Pr2z7DcnS5wERU_EOjPgEsEj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.4wEUNg7z3DjYrsMdrxsIJQHaFR%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.7ddHZIp3PBYjcNNrcSmO6AHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.OEyzePadAkAxjP7RWppmBQHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.TiQioTgbUfU9MQLdqXCBuwHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.lg0Z_YhYpwi6DspeYUZV6gHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.MhmL5r-wKOZRKmTV-9vh-wHaHc%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.TYjf8wyXRmfHN13cw9e02wHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.tt_MmqpxdIPp48flT0ze_gHaFK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.VmNBDy0p6wxdkkCo3U96vQHaE9%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.TYFUVGG2PH8frGwqbvBJRQHaHa%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.1k-i3wD_nAGiO3XGO6NV4wHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.BFEppLFfhdVTIbVA0VyOzwHaEK%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.8U1vjAVXRBN-cnMBuC6wYwHaFj%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.F7KfhUWtR0KppghotnGVmwHaH8%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jswZSElD9U8ihpWEI-xmlgHaE7%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.TB-FdNirf5TPU2yKvbCS8AHaFI%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.Eo8SmsXqjj4VFU0Kit12jwHaFy%26pid%3DApi&f=1",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.drNmeRhdqWuHKPGKX1CH6gHaEo%26pid%3DApi&f=1"
+        ];
 
-<body id="oreo">
-  <img style="display: none;" id="bigPic" src="bigPic" />
-  <h1 id="h1" style="color: white">Click for happiness!</h1>
-  <script>
-    function showPic() {
-      var sourceOfPicture = new Array();
-      sourceOfPicture[0] = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-baby-animals-1558535060.jpg?crop=0.752xw:1.00xh;0.125xw,0&resize=640:*"; //2 retrivers
-      sourceOfPicture[1] = "https://en.bcdn.biz/Images/2018/6/12/27565ee3-ffc0-4a4d-af63-ce8731b65f26.jpg"; //kitty with paw in mouth
-      sourceOfPicture[2] = "https://static.boredpanda.com/blog/wp-content/uuuploads/cute-baby-animals/cute-baby-animals-10.jpg"; // piglet
-      sourceOfPicture[3] = "https://static.boredpanda.com/blog/wp-content/uploads/2014/03/cute-fluffy-animals-coverimage.jpg"; // smol white doggo
-      sourceOfPicture[4] = "https://i1.wp.com/www.dailycal.org/assets/uploads/2019/10/animals_wikimedia_cc.jpg?ssl=1"; // seal
-      sourceOfPicture[5] = "https://i0.wp.com/thefunnybeaver.com/wp-content/uploads/2018/03/animal-fox.jpg?resize=564%2C500&ssl=1"; //fox
-      sourceOfPicture[6] = "https://www.thetimes.co.uk/imageserver/image/methode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd2dfda58-9662-11e8-821b-8d0d10bd0d40.jpg?crop=1080%2C607%2C0%2C418&resize=685"; //hedgehog in flowers
-      sourceOfPicture[7] = "https://www.andysowards.com/blog/assets/cute-animal-photography-funny-kitty-puppy-memes-11-600x434.jpg"//husky
-      sourceOfPicture[8] = "https://www.heraldscotland.com/resources/images/4502082?type=responsive-gallery-fullscreen"//hampseter looking thing
-      sourceOfPicture[9] = "https://ichef.bbci.co.uk/images/ic/1200x675/p03t268b.jpg"//sloth
-      sourceOfPicture[10] = "https://compote.slate.com/images/73f0857e-2a1a-4fea-b97a-bd4c241c01f5.jpg"//penguins
-      sourceOfPicture[11] = "https://frontier.ac.uk/Uploads/images/cute1.jpg"//koala
-      sourceOfPicture[12] = "https://alltimelists.com/wp-content/uploads/2018/02/Cute-Animals-that-Are-Not-Pets.jpg"//red panda
-      sourceOfPicture[13] = "https://static.boredpanda.com/blog/wp-content/uploads/2015/06/cute-bunnies-tongues-fb__700.jpg"//Bunno with tongue out
-      sourceOfPicture[14] = "https://www.rover.com/blog/wp-content/uploads/2019/01/6342530545_45ec8696c8_b-960x540.jpg"//corgo
-      sourceOfPicture[15] = "https://4.bp.blogspot.com/-9cPE3C_43MM/TrdQ4d5NvkI/AAAAAAAADXY/35qekAviNW4/s1600/tumblr_lu59vdTFiN1qgbg0co1_500.jpg"//baby panda
-      sourceOfPicture[16] = "https://www.rd.com/wp-content/uploads/2018/12/50-Funny-Animal-Pictures-That-You-Need-In-Your-Life-2.jpg"//girraffe
-      sourceOfPicture[17] = "https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixlib=rb-1.2.1&w=1000&q=80"//raccon
-      sourceOfPicture[18] = "https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492__340.jpg"//ponder kitten
-      sourceOfPicture[19] = "https://www.rd.com/wp-content/uploads/2017/10/203_The-Dogist-Puppies-760x506.jpg"//smile doggo
-      sourceOfPicture[20] = "https://englishlive.ef.com/blog/wp-content/uploads/sites/2/2016/02/8-motivational-quotes-to-keep-yourself-up.jpg"//motivational
-      var rnd = Math.floor(Math.random() * sourceOfPicture.length);
-      var img = document.getElementById("bigPic");
-      img.src = sourceOfPicture[rnd]
+        var rnd = Math.floor(Math.random() * sourceOfPicture.length);
+        var img = document.getElementById("bigPic");
+        img.src = sourceOfPicture[rnd];
 
-      if (img.style.display === "block") {
-        img.style.display = "none";
-        document.getElementById("h1")
-        h1.style.display = "flex"
-      } else {
-        img.style.display = "block";
-        h1.style.display = "none";
+        img.onload = () => {
+          img.style.display = "block";
+          h1.style.display = "none";
 
-        console.log(document.body.clientWidth);
+          console.log(document.body.clientWidth);
 
-        if (document.body.clientWidth <= 500){
-          img.style.width = document.body.clientWidth + "px"
-        }
+          if (document.body.clientWidth <= 500) {
+            img.style.width = document.body.clientWidth + "px";
+          }
+        };
       }
-    }
-    var body = document.getElementsByTagName("body")[0];
-    body.addEventListener("click", () => {
-      console.log("hi");
-      showPic();
-    });
-  </script>
-</body>
 
+      setInterval(()=>showPic(),2000)
+
+      var body = document.getElementsByTagName("body")[0];
+      body.addEventListener("click", () => {
+        console.log("hi");
+        showPic();
+      });
+    </script>
+  </body>
 </html>

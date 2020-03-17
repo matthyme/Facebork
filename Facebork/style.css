@@ -47,7 +47,8 @@
 }
 
 #oreo {
-  background-color: black;
+  background-image: url(images/wf.gif);
+  background-size: cover;
   user-select: none;
   align-items: center;
   justify-content: center;
@@ -56,4 +57,5 @@
   height: 100vh;
   flex-direction: column;
   font-family: "Anton", sans-serif;
+ 
 }
